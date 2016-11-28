@@ -77,10 +77,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.TextEditor, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
-      <HintPath>..\packages\ICSharpCode.TextEditor.3.2.1.6466\lib\Net20\ICSharpCode.TextEditor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\log4net.dll</HintPath>
@@ -121,6 +117,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,8 +151,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\ReceiversForm.resx">
       <DependentUpon>ReceiversForm.cs</DependentUpon>
@@ -161,11 +162,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -260,20 +256,21 @@
     <None Include="res\burn16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\unselect.png" />
     <None Include="res\backward16.png" />
     <None Include="res\forward16.png" />
-    <Content Include="res\collapse_all.png" />
     <Content Include="res\Go16.png" />
     <None Include="res\movefile16.png" />
     <Content Include="res\Pause16.png" />
-    <Content Include="res\pin.png" />
     <Content Include="res\saveas16.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ICSharpCode.TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2d18be89-d210-49eb-a9dd-2246fbb3df6d}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RichTextBoxLinks\RichTextBoxLinks.csproj">
       <Project>{8B833B00-BB4C-4FAF-B6C4-BF77824F96A1}</Project>
       <Name>RichTextBoxLinks</Name>
